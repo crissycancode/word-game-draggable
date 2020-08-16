@@ -1,6 +1,4 @@
-body {
-  overscroll-behavior: contain;
-}
+
 .card{
   height: 80px;
   min-width: 120px;
