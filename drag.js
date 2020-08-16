@@ -53,6 +53,7 @@ export class Drag {
       }
 
       if(round === length){
+        document.getElementById('draggableContainer').innerHTML ='';
         document.getElementById('button').removeAttribute('disabled');
       }
     }
