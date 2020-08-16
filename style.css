@@ -1,14 +1,9 @@
-
 .card{
   height: 80px;
   min-width: 120px;
   margin: 1px;
 }
-.draggable-card-body{
-/*   min-width: fit-content; 
-  min-height: fit-content; 
-  background-color:white; */
-}
+
 .draggable-container {
   display: flex; 
   flex-wrap: wrap; 

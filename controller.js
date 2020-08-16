@@ -58,7 +58,7 @@ function drawBoard(element, words){
     htmlElement.createCardBody(element.childNodes[i]);
     if(element.id === 'draggableContainer'){
       element.childNodes[i].classList.remove('card');
-      element.childNodes[i].classList.add('draggable-card-body');
+      element.childNodes[i].classList.add('card-removed');
       htmlElement.createCardTitle(array[i],(element.childNodes[i]).firstChild); //draggable
     }
     htmlElement.addNameAttribute((element.childNodes[i]).firstChild, array[i]);

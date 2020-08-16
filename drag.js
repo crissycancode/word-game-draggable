@@ -18,8 +18,7 @@ export class Drag {
 
     function dragStart(e) {
       e.dataTransfer.setData('text', e.target.id);
-      console.log('dragStart!');
-      console.log(e.dataTransfer.getData);
+      e.target.classList.add('card');
     }
     
     function dragOver(e) {
@@ -44,6 +43,8 @@ export class Drag {
         target.style.minWidth = 'fit-content';
         draggableElement.style.opacity = '0';
         round++;
+      }else{
+        draggableElement.classList.remove('card');
       }
 
       if(round === length){
