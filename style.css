@@ -27,19 +27,14 @@
   justify-content: center;
 }
 
-.btn {
-  width: fit-content; 
-  height: fit-content; 
-  border: 2px solid #000000;
-  margin-top: 20px;
-}
-
 .page-container{
   position: relative;
   max-height: fit-content;
   justify-content: center;
   width: 100% - margin;
   margin: 30px;
+  padding-top: 2px;
+  padding-right: 2px;
   text-align: center;
 }
 

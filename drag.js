@@ -46,7 +46,6 @@ export class Drag {
       }else{
         this.parentElement.classList.add('border-danger');
         draggableElement.firstChild.style.color = '#DC143C';
-        console.log(this.parentElement);
         setTimeout(_=>{
           this.parentElement.classList.remove('border-danger');
           draggableElement.firstChild.style.color = '#000000';

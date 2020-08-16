@@ -5,12 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://bootswatch.com/4/sketchy/bootstrap.css">
     <link rel="stylesheet" href="https://bootswatch.com/4/sketchy/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <title>Word Game</title>
   </head>
   <body>
     <div class="wrapper">
       <div class="page-container jumbotron" id="page-container">
+        <button type="button" id="reload" class="btn btn-success btn" style="border:2px solid #000000; float: right">
+          <i class="fa fa-refresh" aria-hidden="true"></i>
+        </button>
+        <br>
+        <br>
+        <br>
+        <br>
         <h1 id="intro"></h1>
         <div class="draggable-container" id="draggableContainer">
           
@@ -19,18 +27,17 @@
         <div class="droppable-container" id="droppableContainer">
   
         </div>
+
+        <br>
         <!-- end of droppableContainer -->
-        <button type="button" id="button">
+
+        <button type="button" id="button" class="btn btn-success" style="border:2px solid #000000;">
           <h1>start</h1>
         </button>
+        <br>
+        
         <!-- end of button -->
-        <!-- <div class="footer-container">
-          <h6 style="float: left; width: 100%; text-align: center;">
-            Word Game by CrissyCanCode &nbsp &nbsp &nbsp &nbsp &nbsp copyright
-            <span style="font-size: 40px;">&copy;</span>2020
-          </h6>
-        </div>
-        end of footer -->
+
       </div> 
       <!-- end of page-container -->
       <footer class="page-footer font-small blue fixed-bottom" style="background: #333; color: white">

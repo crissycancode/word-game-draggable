@@ -11,13 +11,15 @@ const htmlElement = new Elements();
 let index = 0;
 let length = 0;
 
+document.getElementById('reload').addEventListener('click', (e) =>{
+  window.location.reload("Refresh");
+});
+
 const nextButton = document.getElementById('button');
 nextButton.addEventListener('click', (event) =>{
   intro();
   document.getElementById('button').disabled = 'true';
   nextButton.innerHTML ='<h1>next</h1>';
-  nextButton.style.border = '2px solid #000000';
-  nextButton.classList.add("btn", "btn-success", "btn-lg");
 
   event.preventDefault();
   if(index !== length){
