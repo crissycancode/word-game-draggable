@@ -1,0 +1,46 @@
+[
+  {
+    "id": 1,
+    "sentence": "What is your name ?"
+  },
+  {
+    "id": 2,
+    "sentence": "How old are you ?"
+  },
+  {
+    "id": 3,
+    "sentence": "What day is it today ?"
+  },
+  {
+    "id": 4,
+    "sentence": "Where do you live ?"
+  },
+  {
+    "id": 5,
+    "sentence": "Did you eat already ?"
+  },
+  {
+    "id": 6,
+    "sentence": "Do you want to go out ?"
+  }
+  ,
+  {
+    "id": 7,
+    "sentence": "What is your favorite color ?"
+  }
+  ,
+  {
+    "id": 8,
+    "sentence": "How many pens do you have ?"
+  }
+  ,
+  {
+    "id": 9,
+    "sentence": "Can you go to the market for me ?"
+  }
+  ,
+  {
+    "id": 10,
+    "sentence": "Is she ok ?"
+  }
+]
