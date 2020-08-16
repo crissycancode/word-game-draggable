@@ -18,7 +18,6 @@ export class Drag {
 
     function dragStart(e) {
       e.dataTransfer.setData('text', e.target.id);
-      e.target.classList.add('card');
     }
     
     function dragOver(e) {
@@ -44,12 +43,11 @@ export class Drag {
         draggableElement.style.opacity = '0';
         round++;
       }else{
-        draggableElement.classList.remove('card');
+        document.getElementById('draggableContainer').innerHTML = '';
       }
 
       if(round === length){
         document.getElementById('button').removeAttribute('disabled');
-        document.getElementById('draggableContainer').innerHTML = '';
       }
     }
   }
