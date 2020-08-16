@@ -1,5 +1,5 @@
 // import { Child, Parent } from "./module.js";
-import { JsonData} from "./jsondata.js"; import { Render } from "./render.js"; import { Shuffle } from "./shuffle.js"; import { HtmlElements } from "./element.js"; 
+import { JsonData} from "./jsondata.js"; import { Render } from "./copy/render.js"; import { Shuffle } from "./shuffle.js"; import { HtmlElements } from "./element.js"; 
 import { Drag } from "./drag.js";
 
 
@@ -35,23 +35,21 @@ window.addEventListener('DOMContentLoaded', (event) => {
   setTimeout(_=>{
     length += json.length;
   }, 300);
-  // renderWords();
   document.getElementById('intro').innerHTML = 'arrange the words in correct order';
 });
 
 function renderWords(){
-  json.getDataByIndex(index); //get the values from jasondata.js
+  json.getDataByIndex(index);
   setTimeout(_=>{
     index += 1;
     const shuffle = new Shuffle(json.sentence);
     drawBoard(document.getElementById('draggableContainer'), shuffle.shuffleArray());
     drawBoard(document.getElementById('droppableContainer'), shuffle.stringToArray());
   }, 300);
-} //end of renderWords() function
+}
 
 function drawBoard(element, words){
   let array = words;
-  //get the longer word to get the box sizes
   element.innerHTML = '';
   for (let i = 0; i < array.length; i++){
     htmlElement.createCard(element);
@@ -76,7 +74,6 @@ function intro(){
 }
 
 function disableButton(){
-  // document.getElementById('button').disabled = 'true';
   document.getElementById('page-container').innerHTML = '';
   document.getElementById('page-container').innerHTML = '<h1>Thank you!</h1>';
 }
