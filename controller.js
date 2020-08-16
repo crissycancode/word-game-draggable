@@ -1,10 +1,12 @@
 // import { Child, Parent } from "./module.js";
-import { JsonData} from "./jsondata.js"; import { Render } from "./copy/render.js"; import { Shuffle } from "./shuffle.js"; import { HtmlElements } from "./element.js"; 
+import { JsonData} from "./jsondata.js"; 
+import { Shuffle } from "./shuffle.js"; 
+import { Elements } from "./element.js"; 
 import { Drag } from "./drag.js";
 
 
 const json = new JsonData("sentences.json");
-const htmlElement = new HtmlElements();
+const htmlElement = new Elements();
 
 let index = 0;
 let length = 0;

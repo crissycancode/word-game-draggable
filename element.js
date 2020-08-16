@@ -1,4 +1,4 @@
-export class HtmlElements{
+export class Elements{
 
   createCard(parentElement){
     const card = document.createElement('div');
