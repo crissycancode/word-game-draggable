@@ -55,5 +55,8 @@
   h1{
     font-size: 36px;
   }
+  h1.draggable-container{
+    font-size: 40px;
+  }
 }
 
