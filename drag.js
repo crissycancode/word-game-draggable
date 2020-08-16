@@ -33,17 +33,24 @@ export class Drag {
       const draggableElement = document.getElementById(draggableElementData);
 
       if(draggableElement.firstChild.getAttribute('word') === this.getAttribute('word')){
-        
+        // actual code
         target.classList.add('dropped');
         draggableElement.classList.add('dragged');
         draggableElement.setAttribute('draggable', 'false');
         target.innerHTML = '';
-        target.innerHTML += `<h2>${this.getAttribute('word')}</h2>`; 
+        target.innerHTML += `<h1>${this.getAttribute('word')}</h1>`; 
         target.style.minWidth = 'fit-content';
         draggableElement.style.opacity = '0';
+        this.parentElement.classList.remove('card');
         round++;
       }else{
-        document.getElementById('draggableContainer').innerHTML = '';
+        this.parentElement.classList.add('border-danger');
+        draggableElement.firstChild.style.color = '#DC143C';
+        console.log(this.parentElement);
+        setTimeout(_=>{
+          this.parentElement.classList.remove('border-danger');
+          draggableElement.firstChild.style.color = '#000000';
+        },2300);
       }
 
       if(round === length){

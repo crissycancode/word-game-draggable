@@ -1,11 +1,15 @@
-body {
-  overscroll-behavior-y: contain;
-}
 
 .card{
   height: 80px;
   min-width: 120px;
-  margin: 1px;
+  margin-left: 3px;
+  padding: 0px;
+  justify-content: center;
+}
+
+.card-body{
+  min-height:0px;
+  justify-content: center;
 }
 
 .draggable-container {
@@ -32,16 +36,28 @@ body {
 
 .page-container{
   position: relative;
-  min-height: fit-content;
+  max-height: fit-content;
   justify-content: center;
   width: 100% - margin;
   margin: 30px;
   text-align: center;
 }
 
-.footer-container{
-  position: absolute;
-  bottom: 0;
-  width: 100%;
+
+
+@media only screen and (max-width: 600px) {
+  body {
+    overscroll-behavior-y: contain;
+  }
+  .page-container{
+    margin: 5px;
+  }
+  .card{
+    max-height: 50px;
+    min-width: 80px;
+  }
+  h1{
+    font-size: 24px;
+  }
 }
 

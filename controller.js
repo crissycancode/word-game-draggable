@@ -15,7 +15,7 @@ const nextButton = document.getElementById('button');
 nextButton.addEventListener('click', (event) =>{
   intro();
   document.getElementById('button').disabled = 'true';
-  nextButton.innerHTML ='<h2>next</h2>';
+  nextButton.innerHTML ='<h1>next</h1>';
   nextButton.style.border = '2px solid #000000';
   nextButton.classList.add("btn", "btn-success", "btn-lg");
 
@@ -58,7 +58,6 @@ function drawBoard(element, words){
     htmlElement.createCardBody(element.childNodes[i]);
     if(element.id === 'draggableContainer'){
       element.childNodes[i].classList.remove('card');
-      element.childNodes[i].classList.add('card-removed');
       htmlElement.createCardTitle(array[i],(element.childNodes[i]).firstChild); //draggable
     }
     htmlElement.addNameAttribute((element.childNodes[i]).firstChild, array[i]);
