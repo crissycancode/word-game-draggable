@@ -1,56 +1,46 @@
 [
   {
     "id": 1,
-    "sentence": "A poor fisher man lives in his hut."
+    "sentence": "What is your name ?"
   },
   {
     "id": 2,
-    "sentence": "Everyday he goes to the sea."
+    "sentence": "How old are you ?"
   },
   {
     "id": 3,
-    "sentence": "One day he sees a strange fish."
+    "sentence": "What day is it today ?"
   },
   {
     "id": 4,
-    "sentence": "I'm not a fish, I'm a magic prince."
+    "sentence": "Where do you live ?"
   },
   {
     "id": 5,
-    "sentence": "We cant eat you."
+    "sentence": "Did you eat already ?"
   },
   {
     "id": 6,
-    "sentence": "Are there no fish in the sea ?"
+    "sentence": "Do you want to go out ?"
   }
   ,
   {
     "id": 7,
-    "sentence": "I want a nice little cottage."
+    "sentence": "What is your favorite color ?"
   }
   ,
   {
     "id": 8,
-    "sentence": "Go and ask the fish!"
+    "sentence": "How many pens do you have ?"
   }
   ,
   {
     "id": 9,
-    "sentence": "Please come up and speak to me."
+    "sentence": "Can you go to the market for me ?"
   }
   ,
   {
     "id": 10,
-    "sentence": "My wife wants something, she wants a cottage."
-  }
-  ,
-  {
-    "id": 11,
-    "sentence": "We can be happy now !"
-  }
-  ,
-  {
-    "id": 12,
-    "sentence": "Yes, we do!"
+    "sentence": "Is she ok ?"
   }
 ]
