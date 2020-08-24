@@ -3,6 +3,7 @@ import { JsonData} from "./jsondata.js";
 import { Shuffle } from "./shuffle.js"; 
 import { Elements } from "./element.js"; 
 import { Drag } from "./drag.js";
+import { Touches } from "./touches.js";
 
 
 const json = new JsonData("sentences.json");
@@ -58,16 +59,22 @@ function drawBoard(element, words){
   for (let i = 0; i < array.length; i++){
     htmlElement.createCard(element);
     htmlElement.createCardBody(element.childNodes[i]);
+
     if(element.id === 'draggableContainer'){
       element.childNodes[i].classList.remove('card');
-      htmlElement.createCardTitle(array[i],(element.childNodes[i]).firstChild); //draggable
+      htmlElement.createCardTitle(array[i].toLowerCase(),(element.childNodes[i]).firstChild); //draggable
     }
+
     htmlElement.addNameAttribute((element.childNodes[i]).firstChild, array[i]);
     htmlElement.addId((element.childNodes[i]).firstChild, [i]);
     htmlElement.addDraggable((element.childNodes[i]).firstChild);
   }
+
   const drag = new Drag(document.querySelectorAll('.draggable'),document.querySelectorAll('.droppable'));
   drag.draggableDom(array.length);
+  const touch = new Touches(document.querySelectorAll('.draggable'),document.querySelectorAll('.droppable'));
+  touch.touchFunctions();
+
 }
 
 function intro(){

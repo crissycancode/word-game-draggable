@@ -4,6 +4,7 @@ export class Elements{
     const card = document.createElement('div');
     card.classList.add('card'); 
     parentElement.appendChild(card);
+    
   }
 
   createCardBody(parentElement){
@@ -17,6 +18,7 @@ export class Elements{
     cardTitle.classList.add('card-title');
     cardTitle.textContent = word;
     parentElement.appendChild(cardTitle);
+    
   }
 
   addNameAttribute(element,word){

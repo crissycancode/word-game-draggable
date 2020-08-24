@@ -2,6 +2,7 @@ export class Drag {
   constructor(draggableElements, droppableElements){
     this.draggableElements = draggableElements;
     this.droppableElements = droppableElements;
+    this.word = '';
   }
 
   draggableDom(length){
@@ -9,22 +10,22 @@ export class Drag {
 
     this.draggableElements.forEach(element => {
       element.addEventListener('dragstart', dragStart);
-    });
+    }); // end of add event listener to draggable elements
 
     this.droppableElements.forEach(element => {
       element.addEventListener('dragover', dragOver);
       element.addEventListener('drop', drop);
-    });
+    }); // end of add event listeners to droppables
 
     function dragStart(e) {
       e.dataTransfer.setData('text', e.target.id);
-    }
+    } // end of dragstart function
     
     function dragOver(e) {
       if(!e.target.classList.contains('dropped')){
         e.preventDefault();
       }
-    }
+    } //end of dragover function
     
     function drop(e) {
       e.preventDefault();
@@ -38,11 +39,17 @@ export class Drag {
         draggableElement.classList.add('dragged');
         draggableElement.setAttribute('draggable', 'false');
         target.innerHTML = '';
-        target.innerHTML += `<h1>${this.getAttribute('word')}</h1>`; 
+        if(round === 0){
+          target.innerHTML += `<h1>${(this.getAttribute('word')).charAt(0).toUpperCase() + (this.getAttribute('word')).slice(1)}</h1>`; 
+        }else{
+          target.innerHTML += `<h1>${this.getAttribute('word')}</h1>`; 
+        }
+        
         target.style.minWidth = 'fit-content';
         draggableElement.style.opacity = '0';
         this.parentElement.classList.remove('card');
         round++;
+
       }else{
         this.parentElement.classList.add('border-danger');
         draggableElement.firstChild.style.color = '#DC143C';
@@ -56,6 +63,13 @@ export class Drag {
         document.getElementById('draggableContainer').innerHTML ='';
         document.getElementById('button').removeAttribute('disabled');
       }
-    }
+    } // end of drop function
   }
 }
+
+
+
+//check if mobile or desktop
+// if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+//   // some code..
+//  }

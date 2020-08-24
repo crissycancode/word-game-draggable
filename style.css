@@ -1,15 +1,19 @@
 
+
 .card{
   height: 80px;
   min-width: 120px;
   margin-left: 3px;
   padding: 0px;
   justify-content: center;
+  position: relative;
+
 }
 
 .card-body{
   min-height:0px;
   justify-content: center;
+  position: relative;
 }
 
 .draggable-container {
@@ -51,6 +55,7 @@
     max-height: 60px;
     min-width: 100px;
     margin-top: 3px;
+    position: relative;
   }
   h1{
     font-size: 36px;
