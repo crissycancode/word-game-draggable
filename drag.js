@@ -32,7 +32,6 @@ export class Drag {
       const target = e.target;
       const draggableElementData = e.dataTransfer.getData('text');
       const draggableElement = document.getElementById(draggableElementData);
-
       if(draggableElement.firstChild.getAttribute('word') === this.getAttribute('word')){
         // actual code
         target.classList.add('dropped');

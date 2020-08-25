@@ -39,7 +39,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
   json.getFileLength();
   setTimeout(_=>{
     length += json.length;
-  }, 300);
+  }, 100);
   document.getElementById('intro').innerHTML = 'arrange the words in correct order';
 });
 
@@ -72,7 +72,7 @@ function drawBoard(element, words){
 
   const drag = new Drag(document.querySelectorAll('.draggable'),document.querySelectorAll('.droppable'));
   drag.draggableDom(array.length);
-  const touch = new Touches(document.querySelectorAll('.draggable'),document.querySelectorAll('.droppable'));
+  const touch = new Touches(document.querySelectorAll('.draggable'),document.querySelectorAll('.droppable'), array.length);
   touch.touchFunctions();
 
 }

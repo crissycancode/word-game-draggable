@@ -31,9 +31,9 @@ export class Elements{
 
   addId(element,number){
     if(element.firstChild !== null){
-      element.setAttribute('id', `draggable-index-${number}`);
+      element.setAttribute('id', `draggable-${number}`);
     }else{
-      element.setAttribute('id', `droppable-index-${number}`);
+      element.setAttribute('id', `${number}`); //changes: element.setAttribute('id', `droppable-index-${number}`);
     }
   }
 
