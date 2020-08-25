@@ -12,8 +12,8 @@ export class Touches {
       element.addEventListener('touchstart', this.process_touchstart,{passive:true});
       element.addEventListener('touchmove', this.process_touchmove, {passive:true});
       element.addEventListener('touchcancel', this.process_touchcancel, {passive:true});
-      element.addEventListener("touchend", function(event) {
-        that.process_touchend(event);
+      element.addEventListener('touchend', function() {
+        that.process_touchend();
       }, {passive:true});
     });
   }
@@ -33,28 +33,17 @@ export class Touches {
     console.error();
   }
 
-  process_touchend(event){
+  process_touchend(){
     event.stopPropagation();
 
     const touch_rectangle = document.elementFromPoint((event.changedTouches[event.changedTouches.length-1].pageX), (event.changedTouches[event.changedTouches.length-1].pageY));
     const touch_word = event.target;
 
-    const bonding_box = touch_rectangle.getBoundingClientRect();
-
-    console.log(event.changedTouches[event.changedTouches.length-1].pageY);
-    console.log(touch_rectangle.getBoundingClientRect().top);
-    console.log(touch_rectangle.getBoundingClientRect().top + touch_rectangle.getBoundingClientRect().height * 0.5);
-    console.log(touch_rectangle.getBoundingClientRect().top + touch_rectangle.getBoundingClientRect().height);
-
-    
-
     if(touch_rectangle.getAttribute('word') === touch_word.getAttribute('word')){
-      if(((event.changedTouches[event.changedTouches.length-1].pageY) < (touch_rectangle.getBoundingClientRect().top + touch_rectangle.getBoundingClientRect().height * 0.5) + 10) 
-      && ((event.changedTouches[event.changedTouches.length-1].pageY) > (touch_rectangle.getBoundingClientRect().top + touch_rectangle.getBoundingClientRect().height * 0.5) - 10)) {
-        this.is_a_match(touch_rectangle, touch_word);
-        this.round++;
-      }
-      touch_word.style.opacity = '1';
+
+      this.is_a_match(touch_rectangle, touch_word);
+      this.round++;
+      
       if(this.round === this.length){
         document.getElementById('button').removeAttribute('disabled');
       }
@@ -65,15 +54,12 @@ export class Touches {
   } 
 
   is_a_match(rectangle, word){
-    word.classList.add('dropped');
-    word.parentElement.classList.add('dragged');
-    word.parentElement.setAttribute('draggable', 'false');
-    word.innerHTML = '';
-    word.style.minWidth = 'fit-content';
-    word.style.opacity = '0';
-
+    rectangle.innerHTML = '';
     rectangle.innerHTML += `<h1>${this.letter_case(rectangle,word)}</h1>`; 
     rectangle.parentElement.classList.remove('card');
+    rectangle.style.minWidth = 'fit-content';
+    word.innerHTML = '';  
+    word.style.opacity = '0';
   }
 
   is_not_a_match(rectangle, word){
