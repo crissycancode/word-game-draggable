@@ -39,10 +39,22 @@ export class Touches {
     const touch_rectangle = document.elementFromPoint((event.changedTouches[event.changedTouches.length-1].pageX), (event.changedTouches[event.changedTouches.length-1].pageY));
     const touch_word = event.target;
 
-    if(touch_rectangle.getAttribute('word') === touch_word.getAttribute('word')){
-      this.is_a_match(touch_rectangle, touch_word);
-      this.round++;
+    const bonding_box = touch_rectangle.getBoundingClientRect();
 
+    console.log(event.changedTouches[event.changedTouches.length-1].pageY);
+    console.log(touch_rectangle.getBoundingClientRect().top);
+    console.log(touch_rectangle.getBoundingClientRect().top + touch_rectangle.getBoundingClientRect().height * 0.5);
+    console.log(touch_rectangle.getBoundingClientRect().top + touch_rectangle.getBoundingClientRect().height);
+
+    
+
+    if(touch_rectangle.getAttribute('word') === touch_word.getAttribute('word')){
+      if(((event.changedTouches[event.changedTouches.length-1].pageY) < (touch_rectangle.getBoundingClientRect().top + touch_rectangle.getBoundingClientRect().height * 0.5) + 10) 
+      && ((event.changedTouches[event.changedTouches.length-1].pageY) > (touch_rectangle.getBoundingClientRect().top + touch_rectangle.getBoundingClientRect().height * 0.5) - 10)) {
+        this.is_a_match(touch_rectangle, touch_word);
+        this.round++;
+      }
+      touch_word.style.opacity = '1';
       if(this.round === this.length){
         document.getElementById('button').removeAttribute('disabled');
       }
