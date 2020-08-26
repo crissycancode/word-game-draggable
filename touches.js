@@ -4,9 +4,11 @@ export class Touches {
     this.rectElements = rectElements;
     this.length = length;
     this.round = 0;
+
+    this.touchEventListener();
   }
 
-  touchFunctions(){
+  touchEventListener(){
     let that = this;
     this.touchElements.forEach(element => {
       element.addEventListener('touchstart', this.process_touchstart,{passive:true});
@@ -40,17 +42,15 @@ export class Touches {
     const touch_word = event.target;
 
     if(touch_rectangle.getAttribute('word') === touch_word.getAttribute('word')){
-
       this.is_a_match(touch_rectangle, touch_word);
       this.round++;
-      
-      if(this.round === this.length){
-        document.getElementById('button').removeAttribute('disabled');
-      }
+      this.next_sentence(touch_rectangle);
     }else{
-      this.is_not_a_match(touch_rectangle, touch_word);
+      if(touch_rectangle.classList === 'card'){
+        this.is_not_a_match(touch_rectangle, touch_word);
+      }
+      touch_word.style.opacity = '1';
     }
-
   } 
 
   is_a_match(rectangle, word){
@@ -79,5 +79,15 @@ export class Touches {
     } 
     return letter;
   }
-  
+
+  next_sentence(element){
+    if(this.round === this.length){
+      setTimeout(_=>{
+        document.getElementById('droppableContainer').innerHTML = '';
+        document.getElementById('droppableContainer').innerHTML = `<h1>correct!</h1>`; 
+        document.getElementById('button').removeAttribute('disabled');
+      },100);
+    }
+    
+  }
 }
