@@ -63,5 +63,9 @@
   h1.draggable-container{
     font-size: 40px;
   }
+
+  .cardTitle{
+    pointer-events:none;
+  }
 }
 

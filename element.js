@@ -18,8 +18,6 @@ export class Elements{
     cardTitle.classList.add('card-title');
     cardTitle.textContent = word;
     parentElement.appendChild(cardTitle);
-    cardTitle.style.pointerEvents = 'none';
-    
   }
 
   addNameAttribute(element,word){
