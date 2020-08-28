@@ -72,7 +72,7 @@ function drawBoard(element, words){
 
   const drag = new Drag(document.querySelectorAll('.draggable'),document.querySelectorAll('.droppable'));
   drag.draggableDom(array.length);
-  const touch = new Touches(document.querySelectorAll('.draggable'),document.querySelectorAll('.droppable'), array.length);
+  // const touch = new Touches(document.querySelectorAll('.draggable'),document.querySelectorAll('.droppable'), array.length);
   // touch.touchFunction();
 
 
