@@ -47,7 +47,6 @@
 @media only screen and (max-width: 600px) {
   body {
     overscroll-behavior-y: contain;
-    pointer-events:none;
   }
   .page-container{
     margin: 5px;
@@ -60,6 +59,7 @@
   }
   h1{
     font-size: 36px;
+    pointer-events:none;
   }
   h1.draggable-container{
     font-size: 40px;
