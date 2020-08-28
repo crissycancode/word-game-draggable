@@ -11,14 +11,14 @@ export class Touches {
   touchFunction(){
     let that = this;
     this.touchElements.forEach(element => {
-      element.addEventListener('touchstart', function() {
-        that.process_touchstart();
-      }, {passive: false});
-      element.addEventListener('touchmove', this.process_touchmove, {passive: false});
+      // element.addEventListener('touchstart', function() {
+      //   that.process_touchstart();
+      // }, true);
+      element.addEventListener('touchmove', this.process_touchmove, true);
+      element.addEventListener('touchcancel', this.process_touchcancel, true);
       element.addEventListener('touchend', function() {
         that.process_touchend();
-      }, {passive: false});
-      element.addEventListener('touchcancel', this.process_touchcancel, {passive: false});
+      }, true);
       
     });
   }
@@ -33,11 +33,8 @@ export class Touches {
   }
 
   process_touchmove(){
-    event.stopPropagation();
     event.preventDefault();
-    // console.log('touch move');
-    // const touch_rectangle = event.changedTouches[0];
-    // console.log(touch_rectangle);
+    this.element = event.changedTouches[0];
     event.target.style.opacity = '.5';
   }
 
