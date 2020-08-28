@@ -15,19 +15,10 @@ export class Touches {
         that.process_touchstart();
       }, {passive: false});
       element.addEventListener('touchmove', this.process_touchmove, {passive: false});
-      element.addEventListener('touchcancel', this.process_touchcancel, {passive: false});
       element.addEventListener('touchend', function() {
         that.process_touchend();
       }, {passive: false});
-    // this.touchElements.forEach(element => {
-    //   element.addEventListener('touchstart', this.process_touchstart, {passive:true});
-    //   element.addEventListener('touchmove', this.process_touchmove, {passive:true});
-    //   element.addEventListener('touchcancel', this.process_touchcancel, {passive:true});
-    //   element.addEventListener('touchend', function() {
-    //     that.process_touchend();
-    //   }, {passive:true});
-
-
+      element.addEventListener('touchcancel', this.process_touchcancel, {passive: false});
       
     });
   }
@@ -42,9 +33,9 @@ export class Touches {
   }
 
   process_touchmove(){
-    // console.log('touch move');
     event.stopPropagation();
     event.preventDefault();
+    // console.log('touch move');
     // const touch_rectangle = event.changedTouches[0];
     // console.log(touch_rectangle);
     event.target.style.opacity = '.5';
