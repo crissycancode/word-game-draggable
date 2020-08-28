@@ -4,43 +4,26 @@ export class Touches {
     this.rectElements = rectElements;
     this.length = length;
     this.round = 0;
-    this.element = '';
     this.touchFunction();
   }
 
   touchFunction(){
     let that = this;
     this.touchElements.forEach(element => {
-      // element.addEventListener('touchstart', function() {
-      //   that.process_touchstart();
-      // }, true);
       element.addEventListener('touchmove', this.process_touchmove, true);
       element.addEventListener('touchcancel', this.process_touchcancel, true);
       element.addEventListener('touchend', function() {
         that.process_touchend();
       }, true);
-      
     });
-  }
-
-  process_touchstart(){
-    console.log('touch start');
-    event.stopPropagation();
-    event.preventDefault();
-
-    // this.element = event.changedTouches[0];
-    console.log(this.element);
-    
   }
 
   process_touchmove(){
     event.preventDefault();
-    this.element = event.changedTouches[0];
     event.target.style.opacity = '.5';
   }
 
   process_touchcancel(){
-    console.log('touch cancelled');
     event.stopPropagation();
     event.preventDefault();
   }
@@ -48,26 +31,25 @@ export class Touches {
   process_touchend(){
     event.stopPropagation();
     event.preventDefault();
-    console.log('touch-end');
 
     const touch_rectangle = document.elementFromPoint((event.changedTouches[event.changedTouches.length-1].pageX), (event.changedTouches[event.changedTouches.length-1].pageY));
-    // const touch_word = this.element;
     const touch_word = event.target;
-      this.check_if_a_match(touch_rectangle, touch_word.firstChild);
-      console.log(touch_word.innerHTML);
-
+    this.check_if_a_match(touch_rectangle, touch_word);
   } 
 
   check_if_a_match(rectangle, word){
-    if(rectangle.getAttribute('word') === word.getAttribute('word')){
-      this.is_a_match(rectangle, word);
-      this.round++;
-      this.next_sentence();
+  
+    if(rectangle.getAttribute('word') === word.firstChild.getAttribute('word')){
+      setTimeout(_=>{
+        this.is_a_match(rectangle, word.firstChild);
+        this.round++;
+        this.next_sentence();
+      },150);
+
     }else{
       if(rectangle.parentElement.classList.toString() === 'card'){
-        this.is_not_a_match(rectangle, word);
+        this.is_not_a_match(rectangle, word.firstChild);
       }
-      word.style.opacity = '1';
     }
   }
 
@@ -76,12 +58,12 @@ export class Touches {
     rectangle.innerHTML = `<h1>${this.letter_case(rectangle,word)}</h1>`; 
     rectangle.parentElement.classList.remove('card');
     rectangle.style.minWidth = 'fit-content';
-    word.innerHTML = '';  
+    word.innerHTML = '';
     word.style.opacity = '0';
+    console.log(word);
   }
 
   is_not_a_match(rectangle, word){
-    word.style.opacity = '1';
     rectangle.parentElement.classList.add('border-danger');
     word.style.color = '#DC143C';
     setTimeout(_=>{
