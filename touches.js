@@ -27,7 +27,8 @@ export class Touches {
     console.log('touch start');
     event.stopPropagation();
     event.preventDefault();
-    this.element = event.changedTouches[0];
+
+    // this.element = event.changedTouches[0];
     console.log(this.element);
     
   }
@@ -50,12 +51,11 @@ export class Touches {
     console.log('touch-end');
 
     const touch_rectangle = document.elementFromPoint((event.changedTouches[event.changedTouches.length-1].pageX), (event.changedTouches[event.changedTouches.length-1].pageY));
-    const touch_word = this.element;
+    // const touch_word = this.element;
+    const touch_word = event.target;
+      this.check_if_a_match(touch_rectangle, touch_word.firstChild);
+      console.log(touch_word.innerHTML);
 
-    if(event.changedTouches[event.changedTouches.length-1].pageX !== touch_word.pageX){
-      console.log(event.changedTouches[event.changedTouches.length-1].pageX + " ; " + touch_word.pageX); //landing
-      this.check_if_a_match(touch_rectangle, touch_word.target);
-    }
   } 
 
   check_if_a_match(rectangle, word){
