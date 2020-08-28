@@ -86,7 +86,7 @@ export class Touches {
         document.getElementById('droppableContainer').innerHTML = '';
         document.getElementById('droppableContainer').innerHTML = `<h1>correct!</h1>`; 
         document.getElementById('button').removeAttribute('disabled');
-      },200);
+      },300);
     }
     
   }
