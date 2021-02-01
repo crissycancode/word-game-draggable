@@ -1,46 +1,77 @@
 [
   {
     "id": 1,
-    "sentence": "What is your name ?"
+    "sentence": "What is a pet competition ?"
   },
   {
     "id": 2,
-    "sentence": "how old are you ?"
+    "sentence": "How do you win a pet competition ?"
   },
   {
     "id": 3,
-    "sentence": "what day is it today ?"
+    "sentence": "What did Peppa brought to the pet competition ?"
   },
   {
     "id": 4,
-    "sentence": "where do you live ?"
+    "sentence": "Who brought the stick insect ?"
   },
   {
     "id": 5,
-    "sentence": "Did you eat already ?"
+    "sentence": "Who brought the gecko ?"
   },
   {
     "id": 6,
-    "sentence": "Do you want to go out ?"
+    "sentence": "What did Zoe Zebra brought to the pet competition ?"
   }
   ,
   {
     "id": 7,
-    "sentence": "What is your favorite color ?"
+    "sentence": "Who did the monkey like ?"
   }
   ,
   {
     "id": 8,
-    "sentence": "How many pens do you have ?"
+    "sentence": "Who polished Goldie’s bowl ?"
   }
   ,
   {
     "id": 9,
-    "sentence": "Can you go to the market for me ?"
+    "sentence": "What is a stick insect ?"
   }
   ,
   {
     "id": 10,
-    "sentence": "Is she ok ?"
+    "sentence": "What can Edward’s gecko do ?"
   }
+  ,
+  {
+    "id": 11,
+    "sentence": "Who decided who’s pet is the best ?"
+  }
+  ,
+  {
+    "id": 12,
+    "sentence": "What does Goldies like doing ?"
+  }
+  ,
+  {
+    "id": 13,
+    "sentence": "What is Pedro’s stick insect’s name ?"
+  }
+  ,
+  {
+    "id": 14,
+    "sentence": "Who’s pet has the longest name ?"
+  }
+  ,
+  {
+    "id": 15,
+    "sentence": "What is Dr.Hamster pet ?"
+  }
+  ,
+  {
+    "id": 16,
+    "sentence": "Who won the competition?"
+  }
+  
 ]
